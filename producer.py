@@ -22,9 +22,7 @@
 #
 # =============================================================================
 
-from confluent_kafka import Producer, KafkaError
-import json
-import ccloud_lib
+
 import environment
 from os import environ
 import producer_func
