@@ -41,11 +41,6 @@ def start_consumer():
                 record_value = msg.value()
                 data = json.loads(record_value)
                 print('data: ', data)
-                # count = data['count']
-                # total_count += count
-                # print("Consumed record with key {} and value {}, \
-                #       and updated total count to {}"
-                #       .format(record_key, record_value, total_count))
     except KeyboardInterrupt:
         pass
     finally:

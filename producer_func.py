@@ -31,7 +31,7 @@ def produce_message(topic):
                   .format(msg.topic(), msg.partition(), msg.offset()))
 
     for n in range(10):
-        record_key = "alice"
+        record_key = "correlationId"
         record_value = json.dumps({'count': n})
         print("Producing record: {}\t{}".format(record_key, record_value))
         producer.produce(topic, key=record_key, value=message, on_delivery=acked)

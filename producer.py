@@ -32,5 +32,4 @@ if __name__ == '__main__':
     message={'testing':'this out'}
     environment.initialize()
     producer_func.produce_message('Test-Topic1', message)
-    # Create Producer instance
     
