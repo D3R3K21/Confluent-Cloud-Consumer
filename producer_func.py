@@ -6,11 +6,12 @@ import uuid
 def produce_message(topic, message):
 
     producer = Producer({
-        'bootstrap.servers': environ.get('bootstrap.servers'),
-        'sasl.mechanisms': environ.get('sasl.mechanisms'),
-        'security.protocol': environ.get('security.protocol'),
-        'sasl.username': environ.get('sasl.username'),
-        'sasl.password': environ.get('sasl.password'),
+        # 'bootstrap.servers': environ.get('bootstrap.servers'),
+        # 'sasl.mechanisms': environ.get('sasl.mechanisms'),
+        # 'security.protocol': environ.get('security.protocol'),
+        # 'sasl.username': environ.get('sasl.username'),
+        # 'sasl.password': environ.get('sasl.password'),
+        'bootstrap.servers': 'a310f17a6901711ea91e50a23db08089-1711275699.us-east-2.elb.amazonaws.com:19092'
     })
 
     # Create topic if needed
