@@ -6,7 +6,7 @@ import environment
 from time import sleep
 environment.initialize()
 producer = KafkaProducer(bootstrap_servers= environ.get('bootstrap.servers'),
-# value_serializer=lambda v: dumps(v).encode('utf-8'),
+value_serializer=lambda v: dumps(v).encode('utf-8'),
 sasl_mechanism='PLAIN',
 security_protocol='SASL_SSL',
 sasl_plain_username=environ.get('sasl.username'),
@@ -14,10 +14,10 @@ sasl_plain_password=environ.get('sasl.password'),
 
 )
 
-for _ in range(100):
+for _ in range(3):
     try:
         print('testing')
-        producer.send('Test-Topic1', value=bytes('{\"test":\"this\"}','utf-8'))
+        producer.send('Test-Topic1', dumps({'test':'this out'}))
         sleep(10)
     except:
         print('error')
